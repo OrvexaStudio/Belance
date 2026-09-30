@@ -176,3 +176,10 @@ document.addEventListener(
 
     }
 );
+
+function resetAppData() {
+
+    localStorage.removeItem(STORAGE_KEY);
+
+    window.location.href = "index.html";
+}
