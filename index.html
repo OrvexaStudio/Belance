@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Balance</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <main class="onboarding">
+
+        <div class="onboarding-card">
+
+            <div class="brand">
+                <div class="brand-mark">B</div>
+                <span>Balance</span>
+            </div>
+
+            <div class="welcome">
+                <p class="eyebrow">BENVENUTO</p>
+
+                <h1>
+                    Prendi il controllo<br>
+                    dei tuoi soldi.
+                </h1>
+
+                <p class="subtitle">
+                    Tieni sotto controllo entrate, uscite,
+                    obiettivi e risparmi in un unico posto.
+                </p>
+            </div>
+
+            <form id="setupForm">
+
+                <div class="input-group">
+                    <label for="name">Come ti chiami?</label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Il tuo nome"
+                        autocomplete="name"
+                        required
+                    >
+                </div>
+
+                <div class="input-group">
+                    <label for="initialBalance">
+                        Con quanti soldi parti?
+                    </label>
+
+                    <div class="money-input">
+                        <span>€</span>
+
+                        <input
+                            type="number"
+                            id="initialBalance"
+                            name="initialBalance"
+                            placeholder="0,00"
+                            min="0"
+                            step="0.01"
+                            inputmode="decimal"
+                            required
+                        >
+                    </div>
+                </div>
+
+                <button type="submit" class="primary-button">
+                    Inizia
+                    <span>→</span>
+                </button>
+
+            </form>
+
+            <p class="privacy-note">
+                I tuoi dati vengono salvati solo su questo dispositivo.
+            </p>
+
+        </div>
+
+    </main>
+
+    <script src="js/app.js"></script>
+
+</body>
+</html>
