@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard — Balance</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <div class="sidebar-brand">
+                <div class="brand-mark">B</div>
+                <span>Balance</span>
+            </div>
+
+            <nav class="navigation">
+
+                <a href="dashboard.html" class="nav-item active">
+                    <span class="nav-icon">⌂</span>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="movements.html" class="nav-item">
+                    <span class="nav-icon">↕</span>
+                    <span>Movimenti</span>
+                </a>
+
+                <a href="statement.html" class="nav-item">
+                    <span class="nav-icon">▤</span>
+                    <span>Estratto conto</span>
+                </a>
+
+                <a href="reports.html" class="nav-item">
+                    <span class="nav-icon">◒</span>
+                    <span>Report</span>
+                </a>
+
+            </nav>
+
+            <div class="sidebar-bottom">
+                <div class="sidebar-user">
+                    <div class="user-avatar" id="userAvatar">F</div>
+
+                    <div>
+                        <strong id="sidebarUserName">Utente</strong>
+                        <span>Account personale</span>
+                    </div>
+                </div>
+            </div>
+
+        </aside>
+
+
+        <!-- CONTENUTO -->
+        <main class="main-content">
+
+            <header class="topbar">
+
+                <div>
+                    <p class="topbar-date" id="currentDate"></p>
+
+                    <h1>
+                        Ciao, <span id="welcomeName">Francesco</span>.
+                    </h1>
+                </div>
+
+                <button class="profile-button" id="profileButton">
+                    <span id="profileInitial">F</span>
+                </button>
+
+            </header>
+
+
+            <!-- GRID PRINCIPALE -->
+            <section class="dashboard-grid">
+
+                <!-- SALDO -->
+                <article class="dashboard-card balance-card">
+
+                    <div class="card-header">
+                        <span>Saldo disponibile</span>
+
+                        <button class="card-menu">•••</button>
+                    </div>
+
+                    <div class="balance-value" id="balanceValue">
+                        €0,00
+                    </div>
+
+                    <div class="balance-footer">
+
+                        <div class="balance-status">
+                            <span class="status-dot"></span>
+                            <span>Situazione attuale</span>
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- ENTRATE -->
+                <article class="dashboard-card">
+
+                    <div class="card-header">
+
+                        <div class="card-title">
+                            <div class="card-icon income-icon">
+                                ↑
+                            </div>
+
+                            <span>Entrate</span>
+                        </div>
+
+                    </div>
+
+                    <div class="stat-value" id="incomeValue">
+                        €0,00
+                    </div>
+
+                    <div class="last-movement" id="lastIncome">
+                        Nessuna entrata registrata
+                    </div>
+
+                </article>
+
+
+                <!-- USCITE -->
+                <article class="dashboard-card">
+
+                    <div class="card-header">
+
+                        <div class="card-title">
+                            <div class="card-icon expense-icon">
+                                ↓
+                            </div>
+
+                            <span>Uscite</span>
+                        </div>
+
+                    </div>
+
+                    <div class="stat-value" id="expenseValue">
+                        €0,00
+                    </div>
+
+                    <div class="last-movement" id="lastExpense">
+                        Nessuna uscita registrata
+                    </div>
+
+                </article>
+
+
+                <!-- OBIETTIVI -->
+                <article
+                    class="dashboard-card goals-card"
+                    id="goalsCard"
+                    style="display: none;"
+                >
+
+                    <div class="card-header">
+
+                        <div class="card-title">
+                            <div class="card-icon goal-icon">
+                                ◎
+                            </div>
+
+                            <span>I miei obiettivi</span>
+                        </div>
+
+                        <button
+                            class="small-button"
+                            id="addGoalButton"
+                        >
+                            +
+                        </button>
+
+                    </div>
+
+                    <div id="goalsList" class="goals-list"></div>
+
+                </article>
+
+
+                <!-- ATTIVITÀ RECENTI -->
+                <article class="dashboard-card recent-card">
+
+                    <div class="card-header">
+
+                        <div class="card-title">
+                            <span>Attività recenti</span>
+                        </div>
+
+                        <a
+                            href="statement.html"
+                            class="view-all"
+                        >
+                            Vedi tutto
+                        </a>
+
+                    </div>
+
+                    <div
+                        id="recentMovements"
+                        class="recent-movements"
+                    >
+                        <div class="empty-state">
+                            <div class="empty-icon">↕</div>
+
+                            <p>Nessun movimento</p>
+
+                            <span>
+                                Le tue ultime attività appariranno qui.
+                            </span>
+                        </div>
+                    </div>
+
+                </article>
+
+
+                <!-- QUICK ACTION -->
+                <article class="dashboard-card action-card">
+
+                    <div class="action-content">
+
+                        <div>
+                            <p class="eyebrow">GESTIONE</p>
+
+                            <h2>
+                                Tieni tutto<br>
+                                sotto controllo.
+                            </h2>
+                        </div>
+
+                        <a
+                            href="movements.html"
+                            class="primary-action"
+                        >
+                            Aggiungi movimento
+                            <span>→</span>
+                        </a>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <script src="js/app.js"></script>
+    <script src="js/dashboard.js"></script>
+
+</body>
+</html>
